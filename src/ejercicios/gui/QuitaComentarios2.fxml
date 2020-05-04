@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane fx:id="inicio" hgap="15.0" vgap="15.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejercicios.gui.QuitaComentariosControlador2">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="Quita Comentarios" GridPane.columnSpan="2">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Label text="Selecciona fichero:" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#muestraSinComentarios" text="Comprobar" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+      <TextArea fx:id="resultado" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#quitarComentarios" text="Guardar cambios" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <Label text="Nombre nuevo fichero:" GridPane.rowIndex="4" />
+      <TextField fx:id="ficheroDestino" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="buscar" mnemonicParsing="false" onAction="#seleccionarArchivo" text="Buscar" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>

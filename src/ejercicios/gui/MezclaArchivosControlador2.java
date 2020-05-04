@@ -53,7 +53,6 @@ public class MezclaArchivosControlador2 implements Initializable {
     FileChooser fileChooser = new FileChooser();
     File file = fileChooser.showOpenDialog(inicio.getScene().getWindow());
     resultado = file.getPath();
-    System.out.println(resultado);
     return resultado;
   }
 
