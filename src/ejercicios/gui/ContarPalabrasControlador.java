@@ -29,10 +29,10 @@ public class ContarPalabrasControlador implements Initializable {
 
     // Desde el primer caracter distinto de espacio
     for (int posicion = 0; posicion<=cadena.length()-1; posicion++) {
-      if (cadena.charAt(posicion)==' ') {
+      if (cadena.charAt(posicion)==' ' || cadena.charAt(posicion)=='\n') {
         contadorPalabras++;
         // No tengo en cuanta los posibles espacios que haya entre las palabras
-        while (posicion<=cadena.length()-1 && cadena.charAt(posicion)==' ') {
+        while ((posicion<=cadena.length()-1 && cadena.charAt(posicion)==' ') ||(posicion<=cadena.length()-1 && cadena.charAt(posicion)=='\n')) {
           posicion++;
         }
       }
