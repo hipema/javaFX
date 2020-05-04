@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+
+<GridPane hgap="15.0" vgap="15.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ejercicios.gui.ContarPalabrasControlador">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="Contar Palabras" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Label prefHeight="90.0" prefWidth="451.0" text="Este programa cuenta el número total de palabras introducidas en el siguiente cuadro de texto:" wrapText="true" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <TextArea fx:id="texto" prefHeight="207.0" prefWidth="451.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#contarPalabras" text="Contar" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Label text="Resultado:" GridPane.rowIndex="4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="resultado" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>

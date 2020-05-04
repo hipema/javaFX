@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane alignment="CENTER" hgap="15.0" vgap="15.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejercicios.gui.MaxMinMedVarControlador">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="197.0" minWidth="167.0" prefWidth="195.0" />
+      <ColumnConstraints maxWidth="78.0" minWidth="21.0" prefWidth="78.0" />
+      <ColumnConstraints maxWidth="171.0" minWidth="120.0" prefWidth="120.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="Calcula máximo, mínimo, media y varianza" GridPane.columnSpan="3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="numNotas" text="Introduce la nota nº 1:" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nota" onAction="#introducirNota" prefHeight="27.0" prefWidth="57.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button mnemonicParsing="false" onAction="#introducirNota" text="Enviar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+      <Label text="de un total de diez notas" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <TextArea fx:id="resultados" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>

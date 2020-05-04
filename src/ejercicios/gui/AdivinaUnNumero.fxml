@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+
+<GridPane alignment="CENTER" hgap="15.0" vgap="15.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ejercicios.gui.AdivinaUnNumeroControlador">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label alignment="CENTER" text="Adivina un Número" GridPane.columnSpan="2">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" text="El número a buscar está entre 1 y 100" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Label text="Intentos disponibles:" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="n" onAction="#probarNumero" scaleX="0.5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label fx:id="textoModificar" prefHeight="26.0" prefWidth="383.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+      <Label fx:id="valores" prefHeight="19.0" prefWidth="383.0" text="Valores introducidos anteriormente:" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+      <Label fx:id="numerosProbados" prefHeight="27.0" prefWidth="383.0" GridPane.columnSpan="2" GridPane.rowIndex="7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#probarNumero" text="Probar" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <Label fx:id="accion" text="Número a probar:" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="intentosQueQuedan" text="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>
