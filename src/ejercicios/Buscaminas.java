@@ -170,27 +170,28 @@ public class Buscaminas extends Application {
     }
   }
   private static void finPartida (String mensaje) {
-    try{
-      List<String> choices = new ArrayList<>();
-      choices.add("Nueva partida");
-      choices.add("Cerrar el juego");
-  
-      ChoiceDialog<String> dialog = new ChoiceDialog<>("Nueva partida", choices);
-      dialog.setTitle("Fin de la partida");
-      dialog.setHeaderText(mensaje);
-      dialog.setContentText("¿Qué desea hacer?");
-  
-      // Traditional way to get the response value.
-      Optional<String> result = dialog.showAndWait();
+    List<String> choices = new ArrayList<>();
+    choices.add("Nueva partida");
+    choices.add("Cerrar el juego");
+
+    ChoiceDialog<String> dialog = new ChoiceDialog<>("Nueva partida", choices);
+    dialog.setTitle("Fin de la partida");
+    dialog.setHeaderText(mensaje);
+    dialog.setContentText("¿Qué desea hacer?");
+
+    // Traditional way to get the response value.
+    Optional<String> result = dialog.showAndWait();
+    if (result.isPresent()){
       if (result.get().compareTo("Nueva partida") == 0) {
         jugarPartida();
       } else {
         System.exit(0);
       }
-    } catch (Exception e) {
+    } else {
       System.exit(0);
-    }
+    }  
   }
+  
   public static void main(String[] args) {
     launch(args);
   }
