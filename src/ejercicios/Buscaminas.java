@@ -6,35 +6,55 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import ejercicios.Mina;
 
 public class Buscaminas extends Application {
   static int filas = 5;
-  static int columnas = 4;
+  static int columnas = 5;
+  static int numeroMinas = 2;
   static Mina casilla[][] = new Mina[columnas][filas];
-  
+  static GridPane root = new GridPane();
   @Override
   public void start(Stage primaryStage) {
     primaryStage.setTitle("App " + this.getClass().getSimpleName());
     // Layout GridPane: nos permite crear una matriz/cuadricula
-    GridPane root = new GridPane();
-    root.setHgap(1);   // separación entre columnas
-    root.setVgap(1);   // separación entre filas
+    root = new GridPane();
+    root.setHgap(2);   // separación entre columnas
+    root.setVgap(2);   // separación entre filas
     root.setPadding(new Insets(15, 15, 15, 15));
-
+    
+    jugarPartida();
+    
+    // creamos escena y asignamos a escenario
+    Scene scene = new Scene(root);
+    primaryStage.setScene(scene);
+    primaryStage.show();
+    
+  }
+    
+  public static void jugarPartida () {
+    // Solicitud Datos
+    solicitudDatos();
     // Inserción de botones
     for (int i =0; i < columnas; i++) {
       for (int j=0; j < filas; j++) {
         casilla[i][j] = new Mina();
-//        casilla[i][j].setText(i+","+j);
+        casilla[i][j].setPrefSize(45, 45);
         root.add(casilla[i][j], i, j);
       }
     }
     
     // Creamos minas aleatorias
-    int numeroMinas = 2;
     int minaFila;
     int minaColumna;
     
@@ -59,117 +79,52 @@ public class Buscaminas extends Application {
           @Override
           public void handle(ActionEvent e) {
             actualizarMina(a,b);
+            calcularResultado();
           }
         });
       }  
     }
-    
-//    casilla[0][1].setText("hola");
-//    casilla[0][1].setStyle("-fx-background-color: #0000ff;" + "-fx-border-color: #ff0000;");
-//    casilla[0][1].setEstado(1);
-    
-//    Label rectangulo = new Label("Rectángulo");
-//    root.add(rectangulo, 0, 0, 2, 1);
-//    GridPane.setHalignment(rectangulo, HPos.CENTER);
-//    rectangulo.setFont(new Font("Arial Black", 25));
-// 
-//    root.add(new Label ("Base: "), 0, 1);
-//    
-//    TextField base = new TextField();
-//    root.add(base, 1, 1);
-//
-//    root.add(new Label("Altura: "), 0, 2);
-//
-//    TextField altura = new TextField();
-//    root.add(altura, 1, 2);
-//
-//    Button calcular = new Button("Calcular");
-//    calcular.setDefaultButton(true);
-//    root.add(calcular, 0, 3, 2, 1); //los parámetros tercero y cuarto son el colspan=2, rowspan=1
-//    GridPane.setHalignment(calcular, HPos.CENTER);
-//    
-//    TextArea resultado = new TextArea();
-//    root.add(resultado,0,4,2,1);
-    
-    // manejo de eventos del botón
-//    calcular.setOnAction(new EventHandler<ActionEvent>() {
 
-//      @Override
-//      public void handle(ActionEvent e) {
-//        try {
-////          if (base.getText().compareTo("") == 0 || base.getText().compareTo("")==0) {
-////            mostrarError("Debes introducir el valor de base y altura");
-////          } else if (Double.parseDouble(base.getText())<=0 || (Double.parseDouble(altura.getText())<= 0)) {
-////            mostrarError("El valor introducido debe ser positivo.");
-////          } else {
-////            double area = Double.parseDouble(base.getText()) * Double.parseDouble(altura.getText());
-////            double perimetro = 2 * (Double.parseDouble(base.getText()) + Double.parseDouble(altura.getText()));
-////            resultado.setText("El triángulo de base " + base.getText() + " y altura "+ altura.getText() +" tiene:\n"+
-////                               "Área: "+area+"\n"+
-////                               "Perímetro: " + perimetro);
-//          }
-//        } catch (Exception error) {
-//            mostrarError("Los valores en base y altura deben ser numéricos");
-//        }
-//
-//    });
 
-    // creamos escena y asignamos a escenario
-    Scene scene = new Scene(root);
-    primaryStage.setScene(scene);
-    primaryStage.show();
   }
   
   public static void actualizarMina (int i, int j) {
     if (casilla[i][j].isEsMina() == true){
-      casilla[i][j].setStyle("-fx-background-color: #0000ff;" + "-fx-border-color: #ff0000;");
-      mostrarError("Perdiste!");
+      casilla[i][j].setStyle("-fx-background-color: #fb0000;" + "-fx-font-color: #ffffff;");
+      finPartida("Pisaste una mina, ¡HAS PERDIDO!");
     } else {
-      casilla[i][j].setStyle("-fx-background-color: #000000;" + "-fx-border-color: #ff0000;");
+      casilla[i][j].setStyle("-fx-background-color: #c7caf3;");
       contarAlrededor(i, j);
+      casilla[i][j].setEstado(1);
       casilla[i][j].setText(Integer.toString(casilla[i][j].getContador()));
     }
   } 
   
   public static void contarAlrededor (int columna, int fila) {
-    try{
-      if (casilla[columna-1][fila-1].isEsMina() && (columna != 0 || fila != 0)) {
-        casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1);
+    casilla[columna][fila].setContador(0);
+    for (int i = 0; i < columnas; i++) {
+      for (int j = 0; j < filas; j++) {
+        if ((i == columna || i == (columna-1) || i == (columna+1)) &&
+            (j == fila || j == (fila-1) || j == (fila+1))){
+          if (casilla[i][j].isEsMina()) {
+            casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1); 
+          }
+        }
       }
-      if (casilla[columna-1][fila].isEsMina() && (columna != 0)) {
-        casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1);
+    }
+  }
+  
+  public static void calcularResultado () {
+    int contador = 0;
+    for (int i = 0; i < columnas; i++) {
+      for (int j = 0; j < filas; j++) {
+        if (casilla[i][j].getEstado() == 1) {
+          contador++;
+        }
       }
-      if (casilla[columna-1][fila+1].isEsMina() && (columna != 0 && fila != filas)) {
-        casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1);
-      }
-      if (casilla[columna][fila-1].isEsMina() && (fila != 0)) {
-        casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1);
-      }
-      if (casilla[columna][fila+1].isEsMina() && (fila != filas)) {
-        casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1);
-      }
-      if (casilla[columna+1][fila-1].isEsMina() && (columna != columnas || fila != 0)) {
-        casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1);
-      }
-      if (casilla[columna+1][fila].isEsMina() && (columna != columnas)) {
-        casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1);
-      }
-      if (casilla[columna+1][fila+1].isEsMina() && (columna != columnas || filas != fila)) {
-        casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1);
-      }
-//      for (int i = 0; i < columna; i++) {
-//        for (int j = 0; j < fila; j++) {
-//          if (i == columna || i == (columna-1) || i == (columna+1)){
-//            if (j == fila || j == (fila-1) || j == (fila+1)) {
-//              if (casilla[i][j].isEsMina() == true && (columna != i && fila != j)) {
-//                casilla[columna][fila].setContador(casilla[columna][fila].getContador()+1); 
-//              }
-//            }
-//          }
-//        }
-//      }
-    } catch (Exception e){
-      System.err.println("asi no");
+    }
+    if ((columnas * filas - contador - numeroMinas) == 0) {
+      finPartida("Has conseguido evitar todas las minas. ¡¡ENHORABUENA!!");
     }
   }
 
@@ -179,6 +134,62 @@ public class Buscaminas extends Application {
     alert.setTitle("Error");
     alert.setContentText(mensaje);
     alert.showAndWait();
+  }
+  
+  public static void solicitudDatos () {
+    Alert alert = new Alert(AlertType.CONFIRMATION);
+    alert.setTitle("Inicio de partida Buscaminas");
+    alert.setHeaderText("Elige tu dificultad: \nFácil (5x5 y 3 minas)\nMedio (10x10 y 12 minas)\nDifícil (10x10 y 20 minas).");
+    alert.setContentText("Elige el nivel deseado.");
+
+    ButtonType facil = new ButtonType("Fácil");
+    ButtonType medio = new ButtonType("Medio");
+    ButtonType dificil = new ButtonType("Difícil");
+//    ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+
+    alert.getButtonTypes().setAll(facil, medio, dificil);
+
+    Optional<ButtonType> result = alert.showAndWait();
+    if (result.get() == facil){
+        filas = 5;
+        columnas = 5;
+        numeroMinas = 3;
+        casilla = new Mina[columnas][filas];
+    } else if (result.get() == medio) {
+        filas = 10;
+        columnas = 10;
+        numeroMinas = 12;
+        casilla = new Mina[columnas][filas];
+    } else if (result.get() == dificil) {
+        filas = 10;
+        columnas = 10;
+        numeroMinas = 20;
+        casilla = new Mina[columnas][filas];
+    } else {
+        // ... user chose CANCEL or closed the dialog
+    }
+  }
+  private static void finPartida (String mensaje) {
+    try{
+      List<String> choices = new ArrayList<>();
+      choices.add("Nueva partida");
+      choices.add("Cerrar el juego");
+  
+      ChoiceDialog<String> dialog = new ChoiceDialog<>("Nueva partida", choices);
+      dialog.setTitle("Fin de la partida");
+      dialog.setHeaderText(mensaje);
+      dialog.setContentText("¿Qué desea hacer?");
+  
+      // Traditional way to get the response value.
+      Optional<String> result = dialog.showAndWait();
+      if (result.get().compareTo("Nueva partida") == 0) {
+        jugarPartida();
+      } else {
+        System.exit(0);
+      }
+    } catch (Exception e) {
+      System.exit(0);
+    }
   }
   public static void main(String[] args) {
     launch(args);
