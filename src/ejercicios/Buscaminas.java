@@ -168,6 +168,7 @@ public class Buscaminas extends Application {
     } else {
         // ... user chose CANCEL or closed the dialog
     }
+    root.getChildren().clear();
   }
   private static void finPartida (String mensaje) {
     List<String> choices = new ArrayList<>();
