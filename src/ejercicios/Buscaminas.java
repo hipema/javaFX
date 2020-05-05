@@ -24,9 +24,27 @@ public class Buscaminas extends Application {
   static int numeroMinas = 2;
   static Mina casilla[][] = new Mina[columnas][filas];
   static GridPane root = new GridPane();
-  @Override
+  static Stage escenarioGuardado;
+
   public void start(Stage primaryStage) {
-    primaryStage.setTitle("App " + this.getClass().getSimpleName());
+        escenarioGuardado = primaryStage;        
+        primaryStage.setTitle("App " + this.getClass().getSimpleName());
+        // Layout GridPane: nos permite crear una matriz/cuadricula
+        root = new GridPane();
+        root.setHgap(2);   // separación entre columnas
+        root.setVgap(2);   // separación entre filas
+        root.setPadding(new Insets(15, 15, 15, 15));
+        
+        jugarPartida();
+        
+        // creamos escena y asignamos a escenario
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.sizeToScene();
+        primaryStage.show();
+  }
+  
+  public static void repetirPartida (Stage escenario) {
     // Layout GridPane: nos permite crear una matriz/cuadricula
     root = new GridPane();
     root.setHgap(2);   // separación entre columnas
@@ -37,9 +55,9 @@ public class Buscaminas extends Application {
     
     // creamos escena y asignamos a escenario
     Scene scene = new Scene(root);
-    primaryStage.setScene(scene);
-    primaryStage.show();
-    
+    escenarioGuardado.setScene(scene);
+    escenarioGuardado.sizeToScene();
+    escenarioGuardado.show();
   }
     
   public static void jugarPartida () {
@@ -166,9 +184,11 @@ public class Buscaminas extends Application {
         numeroMinas = 20;
         casilla = new Mina[columnas][filas];
     } else {
-        // ... user chose CANCEL or closed the dialog
+        System.exit(0);
     }
-    root.getChildren().clear();
+      root.getChildren().clear();
+      root.autosize();
+
   }
   private static void finPartida (String mensaje) {
     List<String> choices = new ArrayList<>();
@@ -184,7 +204,7 @@ public class Buscaminas extends Application {
     Optional<String> result = dialog.showAndWait();
     if (result.isPresent()){
       if (result.get().compareTo("Nueva partida") == 0) {
-        jugarPartida();
+        repetirPartida(escenarioGuardado);
       } else {
         System.exit(0);
       }
