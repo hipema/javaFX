@@ -16,7 +16,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class MaxMinMedVarControlador implements Initializable {
-  private int totalNotas = 10;
+  
   private ArrayList <Double> notasIntroducidas = new ArrayList<Double>();
   private double minimo = 11;
   private double maximo = -1;
@@ -33,7 +33,8 @@ public class MaxMinMedVarControlador implements Initializable {
   @FXML
   private TextArea resultados;  // área para mostrar los resultados calculados.
   
-  @FXML
+  private int totalNotas = Integer.parseInt(numNotas.getText());
+  
   private void TipoDatoIncorrecto(String mensaje) {
       Alert alert = new Alert(Alert.AlertType.ERROR);
       alert.setHeaderText(null);
@@ -49,7 +50,7 @@ public class MaxMinMedVarControlador implements Initializable {
   public void introducirNota () {
     try {
       double valorNota = Double.parseDouble(nota.getText());
-      if (notasIntroducidas.size() == 10) {
+      if (notasIntroducidas.size() == totalNotas) {
         TipoDatoIncorrecto("Ya has introducido todas las notas.");
       } else {
         if (valorNota < 0 || valorNota>10) {
@@ -66,7 +67,7 @@ public class MaxMinMedVarControlador implements Initializable {
           resultados.setText(resultados.getText() + "Nota " + notasIntroducidas.size() + ": " + nota.getText() + "\n");
           nota.setText("");
           
-        } if (notasIntroducidas.size() == 10) {
+        } if (notasIntroducidas.size() == totalNotas) {
           media = sumaNotas/notasIntroducidas.size();
           
           // Proceso segunda parte: varianza
@@ -85,7 +86,7 @@ public class MaxMinMedVarControlador implements Initializable {
                               resultados.getText());
           
         }
-        if (notasIntroducidas.size() != 10) {
+        if (notasIntroducidas.size() != totalNotas) {
           numNotas.setText("Introduce la Nota nº: "+(notasIntroducidas.size()+1));
         }
       }

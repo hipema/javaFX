@@ -27,7 +27,7 @@ public class QuitaComentariosControlador implements Initializable {
   
   @FXML
   private TextArea resultado;
-  @FXML
+ 
   private void TipoDatoIncorrecto(String mensaje) {
       Alert alert = new Alert(Alert.AlertType.ERROR);
       alert.setHeaderText(null);

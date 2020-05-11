@@ -22,7 +22,6 @@ public class CajeroCambioControlador implements Initializable {
   cincuentaCentimos, unEuro, dosEuros, cincoEuros, diezEuros, veinteEuros, cincuentaEuros,
   cienEuros, doscientosEuros, quinientosEuros; 
   
-  @FXML
   private void TipoDatoIncorrecto(String mensaje) {
       Alert alert = new Alert(Alert.AlertType.ERROR);
       alert.setHeaderText(null);

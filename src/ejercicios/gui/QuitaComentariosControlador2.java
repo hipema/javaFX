@@ -38,7 +38,7 @@ public class QuitaComentariosControlador2 implements Initializable {
   
   @FXML
   private TextArea resultado;
-  @FXML
+  
   private void TipoDatoIncorrecto(String mensaje) {
       Alert alert = new Alert(Alert.AlertType.ERROR);
       alert.setHeaderText(null);
@@ -53,6 +53,7 @@ public class QuitaComentariosControlador2 implements Initializable {
   
   public void seleccionarArchivo () {
     FileChooser fileChooser = new FileChooser();
+    fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Ficheros Java", "*.java"));
     File file = fileChooser.showOpenDialog(inicio.getScene().getWindow());
     archivoOrigen = file.getPath();
   }

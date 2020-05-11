@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane fx:id="inicio" hgap="25.0" prefHeight="449.0" prefWidth="483.0" vgap="25.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejercicios.gui.TextFlowyEfectosControlador">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="Ejercicio con TextFlow y Efectos" GridPane.columnSpan="3" GridPane.halignment="CENTER">
+         <font>
+            <Font name="Arial" size="31.0" />
+         </font>
+      </Label>
+      <Button fx:id="BotonArchivoImagen" mnemonicParsing="false" onAction="#seleccionarArchivo" text="Seleccionar" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <TextField fx:id="archivoImagen" text="selecciona un archivo de imagen" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <ImageView fx:id="imagen" fitHeight="199.0" fitWidth="244.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5">
+         <image>
+            <Image url="file:/Users/manuelhidalgo/Desktop/Programación/Java/JavaFX/src/ejercicios/gui/imagenes/5euros.png" />
+         </image></ImageView>
+      <ChoiceBox fx:id="opciones" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Efecto Imagen" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextFlow fx:id="texto" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+         <children>
+            <Text fx:id="texto1" strokeType="OUTSIDE" strokeWidth="0.0" text="Este es un mensaje de prueba, el Text Flow es una especie de cajón, que agrupa diferentes objetos Texto " />
+            <Text fx:id="texto2" strokeType="OUTSIDE" strokeWidth="0.0" text="y permite concatenarlos, de forma que puedas montar un sólo texto en apariencia" />
+            <Text fx:id="textoColor" strokeType="OUTSIDE" strokeWidth="0.0" text=" pero modificando su color" />
+            <Text fx:id="textoTamano" strokeType="OUTSIDE" strokeWidth="0.0" text=", tamaño" />
+            <Text fx:id="texto3" strokeType="OUTSIDE" strokeWidth="0.0" text="y demás propiedades. Igualmente puedes justificarlo y aplicar algunas propiedades generales al bloque." />
+         </children></TextFlow>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="1" GridPane.rowSpan="4">
+         <children>
+            <Label text="Modificar opciones texto">
+               <font>
+                  <Font name="Arial Black" size="10.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="justificarTexto" mnemonicParsing="false" onAction="#justificarElTexto" text="Justificar Texto" />
+            <CheckBox fx:id="cambioColor" mnemonicParsing="false" onAction="#cambioDeColor" text="Cambio Color" />
+            <CheckBox fx:id="cambioTamano" mnemonicParsing="false" onAction="#cambioDeTamano" text="Cambio Tamaño" />
+            <CheckBox fx:id="cambioFuente" mnemonicParsing="false" onAction="#cambioDeFuente" text="Cambio de Fuente" />
+         </children>
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <Button fx:id="aplicarEfectos" mnemonicParsing="false" onAction="#aplicarLosEfectos" text="Aplicar" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</GridPane>
