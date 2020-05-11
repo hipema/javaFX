@@ -7,12 +7,14 @@ public class Mina extends Button {
   private int estado;
   private boolean esMina;
   private int contador;
+  private boolean casillaVisible;
 
   // Constructor
   Mina() { 
     setEstado(0);
     setEsMina(false);
     setContador(0);
+    setCasillaVisible(false);
   }
 
   public int getEstado() {
@@ -23,11 +25,11 @@ public class Mina extends Button {
     return esMina;
   }
 
-  public void setEstado(int estado) {
+  private void setEstado(int estado) {
     this.estado = estado;
   }
 
-  public void setEsMina(boolean esMina) {
+  void setEsMina(boolean esMina) {
     this.esMina = esMina;
   }
 
@@ -35,7 +37,25 @@ public class Mina extends Button {
     return contador;
   }
 
-  public void setContador(int contador) {
+  void setContador(int contador) {
     this.contador = contador;
+  }
+  
+  public boolean isCasillaVisible() {
+    return casillaVisible;
+  }
+
+  public void setCasillaVisible(boolean minaVisible) {
+    this.casillaVisible = minaVisible;
+  }
+
+  public void cambiarEstado() {
+    if (getEstado() == 0) {
+      setEstado(1);
+    } else if (getEstado() == 1) {
+      setEstado(2);
+    } else {
+      setEstado(0);
+    }
   }
 }

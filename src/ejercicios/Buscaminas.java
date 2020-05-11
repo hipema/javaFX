@@ -1,7 +1,6 @@
 package ejercicios;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -9,13 +8,15 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import ejercicios.Mina;
 
 public class Buscaminas extends Application {
@@ -79,44 +80,79 @@ public class Buscaminas extends Application {
     for (int i=0; i < numeroMinas; i++) {
       do {
         minaFila = (int)(Math.random()*filas);
-        System.out.println("Fila"+minaFila);
+        //System.out.println("Fila"+minaFila);
         minaColumna = (int)(Math.random()*columnas); 
-        System.out.println("Columna: "+minaColumna);
+        //System.out.println("Columna: "+minaColumna);
       } while (casilla[minaColumna][minaFila].isEsMina() == true);
       
       casilla[minaColumna][minaFila].setEsMina(true);
     }
+    
+    
+    
     
     // Comprobar si es mina
     for (int i =0; i < columnas; i++) {
       for (int j=0; j < filas; j++) {
         int a =i;
         int b =j;
-        casilla[i][j].setOnAction(new EventHandler<ActionEvent>() {
-
+        casilla[i][j].setOnMouseClicked(new EventHandler<MouseEvent>() {
+          
           @Override
-          public void handle(ActionEvent e) {
-            actualizarMina(a,b);
-            calcularResultado();
+          public void handle(MouseEvent e) {
+            if(e.getButton() == MouseButton.PRIMARY && casilla[a][b].getEstado()==0) {
+              actualizarMina(a,b);
+              casilla[a][b].setCasillaVisible(true);;
+              calcularResultado();
+            } else if(e.getButton() == MouseButton.SECONDARY && !casilla[a][b].isCasillaVisible()) {
+                marcarMina(a, b);
+            }
           }
         });
       }  
     }
-
-
   }
   
   public static void actualizarMina (int i, int j) {
     if (casilla[i][j].isEsMina() == true){
+      ImageView imageView = new ImageView();
+      imageView.setPreserveRatio(true);
+      imageView.setFitWidth(25);
+      imageView.setImage(new Image("ejercicios/gui/imagenes/mina.png"));
+      
+      casilla[i][j].setGraphic(imageView);
       casilla[i][j].setStyle("-fx-background-color: #fb0000;" + "-fx-font-color: #ffffff;");
       finPartida("Pisaste una mina, ¡HAS PERDIDO!");
     } else {
       casilla[i][j].setStyle("-fx-background-color: #c7caf3;");
       contarAlrededor(i, j);
-      casilla[i][j].setEstado(1);
       casilla[i][j].setText(Integer.toString(casilla[i][j].getContador()));
     }
   } 
+  
+  public static void marcarMina (int i, int j) {
+    ImageView imageView = new ImageView();
+    imageView.setPreserveRatio(true);
+    imageView.setFitWidth(25);
+    casilla[i][j].setGraphic(imageView);
+    switch (casilla[i][j].getEstado()){
+      case 0:
+        imageView.setImage(new Image("ejercicios/gui/imagenes/bandera.png"));
+        casilla[i][j].setStyle("-fx-background-color: #faac03;");
+        casilla[i][j].cambiarEstado();
+        break;
+      case 1:
+        imageView.setImage(new Image("ejercicios/gui/imagenes/interrogacion.png"));
+        casilla[i][j].setStyle("-fx-background-color: #a017c7;");
+        casilla[i][j].cambiarEstado();
+        break;
+      case 2:
+        casilla[i][j].setGraphic(null);
+        casilla[i][j].setStyle("");
+        casilla[i][j].cambiarEstado();
+        break;
+    }
+  }
   
   public static void contarAlrededor (int columna, int fila) {
     casilla[columna][fila].setContador(0);
