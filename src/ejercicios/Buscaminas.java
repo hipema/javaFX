@@ -88,9 +88,6 @@ public class Buscaminas extends Application {
       casilla[minaColumna][minaFila].setEsMina(true);
     }
     
-    
-    
-    
     // Comprobar si es mina
     for (int i =0; i < columnas; i++) {
       for (int j=0; j < filas; j++) {
@@ -113,20 +110,25 @@ public class Buscaminas extends Application {
     }
   }
   
-  public static void actualizarMina (int i, int j) {
-    if (casilla[i][j].isEsMina() == true){
-      ImageView imageView = new ImageView();
-      imageView.setPreserveRatio(true);
-      imageView.setFitWidth(25);
-      imageView.setImage(new Image("ejercicios/gui/imagenes/mina.png"));
-      
-      casilla[i][j].setGraphic(imageView);
-      casilla[i][j].setStyle("-fx-background-color: #fb0000;" + "-fx-font-color: #ffffff;");
+  public static void actualizarMina (int a, int b) {
+    if (casilla[a][b].isEsMina() == true){
+      for (int i =0; i < columnas; i++) {
+        for (int j=0; j < filas; j++) {
+          if (casilla[i][j].isEsMina() == true){
+            ImageView imageView = new ImageView();
+            imageView.setPreserveRatio(true);
+            imageView.setFitWidth(25);
+            imageView.setImage(new Image("ejercicios/gui/imagenes/mina.png"));
+            casilla[i][j].setGraphic(imageView);
+            casilla[i][j].setStyle("-fx-background-color: #fb0000;" + "-fx-font-color: #ffffff;");
+          }
+        }
+      } 
       finPartida("Pisaste una mina, ¡HAS PERDIDO!");
     } else {
-      casilla[i][j].setStyle("-fx-background-color: #c7caf3;");
-      contarAlrededor(i, j);
-      casilla[i][j].setText(Integer.toString(casilla[i][j].getContador()));
+      casilla[a][b].setStyle("-fx-background-color: #c7caf3;");
+      contarAlrededor(a, b);
+      casilla[a][b].setText(Integer.toString(casilla[a][b].getContador()));
     }
   } 
   
@@ -172,7 +174,7 @@ public class Buscaminas extends Application {
     int contador = 0;
     for (int i = 0; i < columnas; i++) {
       for (int j = 0; j < filas; j++) {
-        if (casilla[i][j].getEstado() == 1) {
+        if (casilla[i][j].isCasillaVisible()) {
           contador++;
         }
       }
