@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-
-<GridPane hgap="25.0" vgap="5.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ejercicios.gui.FraccionesControlador">
+<GridPane hgap="25.0" vgap="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejercicios.gui.FraccionesControlador">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -38,7 +37,7 @@
       <Line endX="100.0" startX="-100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <VBox prefHeight="45.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowSpan="4">
          <children>
-            <RadioButton fx:id="suma" mnemonicParsing="false" text="Suma">
+            <RadioButton fx:id="suma" mnemonicParsing="false" selected="true" text="Suma">
                <toggleGroup>
                   <ToggleGroup fx:id="Operacion" />
                </toggleGroup>

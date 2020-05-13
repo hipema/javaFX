@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -142,13 +141,4 @@ public class TextFlowyEfectosControlador implements Initializable {
       sepia();
     }    
   }
-  
-  // Mensaje de Alerta Error
-  private void TipoDatoIncorrecto(String mensaje) {
-    Alert alert = new Alert(Alert.AlertType.ERROR);
-    alert.setHeaderText(null);
-    alert.setTitle("Error");
-    alert.setContentText(mensaje);
-    alert.showAndWait();
-}
 }

@@ -1,104 +1,63 @@
 package ejercicios.gui;
 
 /**
- * Esta clase crea objetos de la clase Fracción.
+ * Controlador-vista para los eventos de CajeroCambio.
  * 
- * @version 1.0
- * @author manuelhidalgo
- * @date 02-02-2020
  */
-public class FraccionClase {
-	// Atributos
-	private int numerador;
-	private int denominador;
 
-	// Constructor
-	FraccionClase(int numerador, int denominador) {
-		this.numerador = numerador;
-		this.denominador = denominador;
-	}
-	
-	// Getters y setters
-	public int getNumerador() {
-		return numerador;
-	}
-	public void setNumerador(int numerador) {
-		this.numerador = numerador;
-	}
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 
-	public int getDenominador() {
-		return denominador;
-	}
-	
-	public void setDenominador(int denominador) {
-		if (denominador == 0) {
-			System.out.println("ERROR, el denominador no puede ser 0, no se ha modificado.");
-		} else {
-			this.denominador = denominador;
-		}
-	}
+public class BuscaPatronControlador implements Initializable {
+  
+  @FXML
+  private TextField importeTotal; // valor numérico que introduce el usuario
+  
+  @FXML
+  private TextField unCentimo, dosCentimos, cincoCentimos, diezCentimos, veinteCentimos,
+  cincuentaCentimos, unEuro, dosEuros, cincoEuros, diezEuros, veinteEuros, cincuentaEuros,
+  cienEuros, doscientosEuros, quinientosEuros; 
+  
+  private void TipoDatoIncorrecto(String mensaje) {
+      Alert alert = new Alert(Alert.AlertType.ERROR);
+      alert.setHeaderText(null);
+      alert.setTitle("Error");
+      alert.setContentText(mensaje);
+      alert.showAndWait();
+  }
 
-// Métodos
-	public String obtenerFraccion () {
-		return this.toString();
-	}
-	
-	public double obtenerResultado () {
-		return (double) this.getNumerador()/this.getDenominador();
-	}
-	
-	public void multiplicaNumero (int numero) {
-		this.numerador *= numero;
-		this.simplificaFraccion();
-	}
-	
-	public void multiplicaFracciones (FraccionClase f) {
-		this.numerador *= f.numerador;
-		this.denominador *= f.denominador;
-		this.simplificaFraccion();
-	}
-	
-	public void dividirFracciones (FraccionClase f) {
-	  this.numerador *= f.denominador;
-	  this.denominador *= f.numerador;
-	  this.simplificaFraccion();
-	}
-	
-	public void sumarFracciones (FraccionClase f) {
-		this.numerador = (this.getNumerador()*f.getDenominador())+(f.getNumerador()*this.getDenominador());
-		this.denominador = this.getDenominador()*f.getDenominador();
-		this.simplificaFraccion();
-	}
-	
-	public void restarFracciones (FraccionClase f) {
-		this.numerador = (this.getNumerador()*f.getDenominador())-(f.getNumerador()*this.getDenominador());
-		this.denominador = this.getDenominador()*f.getDenominador();
-		this.simplificaFraccion();
-	}
-	
-	/**
-	 * Función para imprimir en pantalla la fracción.
-	 */
-	public String toString() {
-		return this.numerador + "/" + this.denominador;
-	}
-	
-	private int mcd () {
-		int dividendo, divisor, resto;
-		dividendo = this.getNumerador();
-		divisor = this.getDenominador();
-		resto = dividendo%divisor;
-		while (resto != 0) {
-			dividendo = divisor;
-			divisor = resto;
-			resto = dividendo % divisor;
-		}
-		return divisor;
-	}
-	public void simplificaFraccion () {
-		int divisor;
-		divisor = this.mcd();
-		this.setNumerador(this.getNumerador()/divisor);
-		this.setDenominador(this.getDenominador()/divisor);		
-	}
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
+  }
+  
+  public void calcular () {
+    try {
+      int resultado;
+      int valores[] = {50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+      TextField resultados[] = {quinientosEuros, doscientosEuros, cienEuros, cincuentaEuros, veinteEuros,
+                                diezEuros, cincoEuros, dosEuros, unEuro, cincuentaCentimos, veinteCentimos,
+                                diezCentimos, cincoCentimos, dosCentimos, unCentimo};
+      
+      for (int i = 0; i< resultados.length; i++) {
+          resultados[i].setText("");
+      }
+
+      double importe = Double.parseDouble(importeTotal.getText())*100;
+      for (int i = 0; i< valores.length; i++) {
+        if (importe >= valores[i]) {
+          resultado = (int)(importe/valores[i]);
+          importe = importe - (resultado)* valores[i];
+          resultados[i].setText(Integer.toString(resultado));
+        }
+      }
+      
+    } catch (Exception e) {
+      TipoDatoIncorrecto("Error, el tipo de dato debe ser numérico\n"
+                       + "Separación números decimales con punto.");
+    }
+  }
 }
