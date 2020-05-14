@@ -3,7 +3,7 @@ package ejercicios;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class BuscaPatron extends Application {
@@ -13,7 +13,7 @@ public class BuscaPatron extends Application {
     try {
       
       FXMLLoader fxml = new FXMLLoader(this.getClass().getResource("gui/BuscaPatron.fxml"));
-      GridPane root = fxml.<GridPane>load();  
+      VBox root = fxml.<VBox>load();  
       Scene scene = new Scene(root);
       primaryStage.setScene(scene);
       primaryStage.setTitle("App " + this.getClass().getSimpleName());     // nombre de la clase

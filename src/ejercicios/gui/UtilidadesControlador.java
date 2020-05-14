@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
 public class UtilidadesControlador {
@@ -35,6 +36,19 @@ public class UtilidadesControlador {
       TipoDatoIncorrecto("Error al leer el archivo");      
     }    
     return "file:"+file.getPath();
+  }
+  
+  public static String seleccionarArchivoTxtVBox (ActionEvent e, Button BotonArchivoTexto, VBox inicio) {
+    File file = null;
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.getExtensionFilters().addAll(
+        new FileChooser.ExtensionFilter("Archivos de texto", "*.txt"));
+    if (e.getSource().equals(BotonArchivoTexto)) {
+      file = fileChooser.showOpenDialog(inicio.getScene().getWindow());
+    } else {
+      TipoDatoIncorrecto("Error al leer el archivo");      
+    }    
+    return file.getPath();
   }
   
   public static String seleccionarCualquierArchivo (ActionEvent e, Button BotonArchivo, GridPane inicio) {
