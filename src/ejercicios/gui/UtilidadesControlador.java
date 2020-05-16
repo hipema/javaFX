@@ -62,6 +62,20 @@ public class UtilidadesControlador {
     return "file:"+file.getPath();
   }
   
+  public static String guardarArchivoTextoVBox (ActionEvent e, Button BotonArchivo, VBox inicio) {
+      File file = null;
+      FileChooser fileChooser = new FileChooser();
+
+      //Set extension filter for text files
+      FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+      fileChooser.getExtensionFilters().add(extFilter);
+
+      //Show save file dialog
+      file = fileChooser.showSaveDialog(inicio.getScene().getWindow());
+
+    return file.getAbsolutePath();
+  }
+  
   public static void TipoDatoIncorrecto(String mensaje) {
     Alert alert = new Alert(Alert.AlertType.ERROR);
     alert.setHeaderText(null);
