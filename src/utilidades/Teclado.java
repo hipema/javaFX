@@ -67,7 +67,6 @@ public class Teclado {
     System.out.println(mensaje);
     return leerDouble();
   }public Teclado() {
-    // TODO Auto-generated constructor stub
   }
   /**
    * Lee un carácter introducido por teclado.

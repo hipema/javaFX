@@ -1,0 +1,1869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="metalmania.gui.MetalmaniaControlador">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="Menú">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Nueva partida" />
+                  <MenuItem mnemonicParsing="false" text="Cargar partida" />
+                  <MenuItem mnemonicParsing="false" text="Guardar partida" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Salir" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Información">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Clasifación Histórica" />
+                  <MenuItem mnemonicParsing="false" text="Músicos" />
+                  <MenuItem mnemonicParsing="false" text="Discográficas" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ayuda">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Instrucciones" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox prefHeight="731.0" prefWidth="1280.0">
+         <children>
+            <VBox prefHeight="733.0" prefWidth="251.0">
+               <children>
+                  <HBox prefHeight="636.0" prefWidth="250.0">
+                     <children>
+                        <GridPane hgap="10.0" prefHeight="587.0" prefWidth="253.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="35.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Listado de Eventos" underline="true" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </Label>
+                              <Button fx:id="eventos2" accessibleRole="IMAGE_VIEW" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" pickOnBounds="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="eventos3" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado3.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos4" graphicTextGap="0.0" layoutX="141.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado4.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos5" graphicTextGap="0.0" layoutX="15.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado5.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos6" graphicTextGap="0.0" layoutX="141.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado6.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos7" graphicTextGap="0.0" layoutX="15.0" layoutY="257.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado7.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos8" graphicTextGap="0.0" layoutX="141.0" layoutY="257.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado8.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos9" graphicTextGap="0.0" layoutX="15.0" layoutY="354.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado9.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos10" graphicTextGap="0.0" layoutX="141.0" layoutY="354.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado10.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos11" graphicTextGap="0.0" layoutX="15.0" layoutY="451.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado11.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="eventos12" graphicTextGap="0.0" layoutX="141.0" layoutY="451.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="91.0" prefWidth="115.0" wrapText="true" GridPane.rowIndex="6">
+                                 <graphic>
+                                    <ImageView fitHeight="91.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@imagenes/dado12.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <VBox fx:id="fondoevento" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                                 <children>
+                                    <Button fx:id="eventoSumar" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#modificarEvento" prefHeight="25.0" prefWidth="95.0" text="SUMAR -2$" />
+                                    <Button fx:id="eventoOK" disable="true" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#llamarEvento" prefHeight="25.0" prefWidth="95.0" text="OK" />
+                                    <Button fx:id="eventoRestar" disable="true" layoutX="10.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#modificarEvento" prefHeight="25.0" prefWidth="95.0" text="RESTAR -2$" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="101.0" prefWidth="250.0">
+                     <children>
+                        <ImageView fitHeight="84.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imagenes/metalmania-logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children></VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="691.0" prefWidth="1032.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="274.0" prefWidth="1031.0">
+                     <children>
+                        <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="995.0" HBox.hgrow="ALWAYS">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="78.0" minHeight="4.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="198.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Clasificación" underline="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <GridPane fx:id="i" gridLinesVisible="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                              </GridPane>
+                              <TextArea fx:id="mensajes" editable="false" prefHeight="79.0" prefWidth="1033.0" wrapText="true" GridPane.rowIndex="1" />
+                              <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Mensajes" underline="true" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Resumen" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TableView fx:id="resumen" prefHeight="200.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn prefWidth="143.0" text="Nombre" />
+                                        <TableColumn maxWidth="103.0" minWidth="63.0" prefWidth="73.0" text="Fama" />
+                                          <TableColumn maxWidth="96.0" minWidth="63.0" prefWidth="77.0" text="Fondos" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                    <HBox alignment="CENTER" prefHeight="104.0" prefWidth="332.0">
+                                       <children>
+                                          <Button fx:id="comenzarPartida" mnemonicParsing="false" onAction="#comenzarContinuar" prefHeight="36.0" prefWidth="114.0" text="Comenzar" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </GridPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="117.0" prefWidth="1031.0">
+                     <children>
+                        <VBox prefHeight="92.0" prefWidth="673.0">
+                           <children>
+                              <GridPane alignment="CENTER" prefHeight="92.0" prefWidth="427.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="dado1" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" wrapText="true" GridPane.halignment="CENTER" />
+                                    <Button fx:id="dado2" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                    <Button fx:id="dado3" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                                    <Button fx:id="dado4" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                                    <Button fx:id="dado5" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+                                    <ComboBox fx:id="combo1" disable="true" prefWidth="150.0" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="combo2" disable="true" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="combo3" disable="true" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="combo4" disable="true" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="combo5" disable="true" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" fillWidth="false" prefHeight="92.0" prefWidth="328.0">
+                           <children>
+                              <HBox fx:id="fondofama" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="bactuacion" contentDisplay="CENTER" disable="true" graphicTextGap="0.0" maxHeight="45.0" maxWidth="60.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accionFama" prefHeight="45.0" prefWidth="60.0" textOverrun="CLIP">
+                                       <graphic>
+                                          <ImageView accessibleRole="BUTTON" cache="true" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imagenes/acciones/actuacion.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="1.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="bgrabacion" contentDisplay="CENTER" disable="true" graphicTextGap="0.0" maxHeight="45.0" maxWidth="60.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accionFama" prefHeight="45.0" prefWidth="60.0" textOverrun="CLIP">
+                                       <graphic>
+                                          <ImageView accessibleRole="BUTTON" cache="true" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imagenes/acciones/grabacion.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="1.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="bpublicidad" contentDisplay="CENTER" disable="true" graphicTextGap="0.0" maxHeight="35.0" maxWidth="60.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accionFama" prefHeight="45.0" prefWidth="60.0" textOverrun="CLIP">
+                                       <graphic>
+                                          <ImageView accessibleRole="BUTTON" cache="true" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imagenes/acciones/publicidad.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="1.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="fondomantenimiento" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                 <children>
+                                    <Button fx:id="bfondos" contentDisplay="CENTER" disable="true" graphicTextGap="0.0" maxHeight="35.0" maxWidth="35.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accionFondos" prefHeight="35.0" prefWidth="35.0" style="-fx-base: #5e5b5b; -fx-background-radius: 100;" textOverrun="CLIP">
+                                       <graphic>
+                                          <ImageView accessibleRole="BUTTON" cache="true" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imagenes/discos/fondos.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="1.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="baudicion" cache="true" contentDisplay="CENTER" disable="true" graphicTextGap="0.0" maxHeight="35.0" maxWidth="35.0" onAction="#accionAudicion" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 100;" textOverrun="CLIP">
+                                       <graphic>
+                                          <ImageView cache="true" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imagenes/discos/audicion.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="1.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="bbirras" contentDisplay="CENTER" disable="true" graphicTextGap="0.0" maxHeight="35.0" maxWidth="35.0" mnemonicParsing="false" onAction="#accionBirras" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 100; -fx-base: #eac028;" textOverrun="CLIP">
+                                       <graphic>
+                                          <ImageView accessibleRole="BUTTON" cache="true" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imagenes/discos/birras.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="1.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="344.0" prefWidth="1031.0">
+                     <children>
+                        <TabPane fx:id="tabJugadores" prefHeight="333.0" prefWidth="1011.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="jugador1Tab" text="Jugador 1">
+                                 <content>
+                                    <TabPane prefHeight="267.0" prefWidth="1011.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab text="Banda">
+                                             <content>
+                                                <GridPane fx:id="MusicosJ1" alignment="CENTER" prefHeight="228.0" prefWidth="1011.0">
+                                                  <columnConstraints>
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="20.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="422.0" minWidth="-Infinity" percentWidth="22.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="22.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints maxHeight="220.31524658203125" minHeight="10.0" prefHeight="210.54351806640625" valignment="CENTER" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="41.671142578125" minHeight="0.0" prefHeight="22.45648193359375" valignment="CENTER" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                        </Tab>
+                                        <Tab text="Información">
+                                             <content>
+                                                <GridPane>
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="223.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.0" minWidth="10.0" prefWidth="127.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="577.0" minWidth="10.0" prefWidth="548.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fama.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" layoutX="24.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fondos.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="j1fama" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="j1fondos" layoutX="290.0" layoutY="35.0" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                        </Tab>
+                                          <Tab text="Actuación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="actuacionJ1" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/actuacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children></VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="95.0" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children></VBox>
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="253.0" prefWidth="274.0" spacing="10.0">
+                                                         <children>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" selected="true" text="Jugador 1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="toggleActJ1" />
+                                                               </toggleGroup>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 2" toggleGroup="$toggleActJ1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 3" toggleGroup="$toggleActJ1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 4" toggleGroup="$toggleActJ1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 5" toggleGroup="$toggleActJ1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets left="10.0" right="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="272.0">
+                                                         <children>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionSumar" prefHeight="60.0" prefWidth="125.0" text="+">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionRestar" prefHeight="60.0" prefWidth="125.0" text="-">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children></VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Grabación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="grabacionJ1" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/grabacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                          <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="toggleGrabJ1" />
+                                                                                 </toggleGroup></ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ1" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ1" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ1" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <Button mnemonicParsing="false" onAction="#grabacionLanzar" text="Volver a Lanzar" />
+                                                                     </children></VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding></VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Publicidad">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="publicidadJ1" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/publicidad0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="togglePubJ1" />
+                                                                                 </toggleGroup></ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ1" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ1" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ1" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <Button mnemonicParsing="false" text="Sumar" />
+                                                                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Restar" />
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content></Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </content>
+                            </Tab>
+                              <Tab fx:id="jugador2Tab" text="Jugador 2">
+                                 <content>
+                                    <TabPane prefHeight="267.0" prefWidth="1011.0" tabClosingPolicy="UNAVAILABLE">
+                                       <tabs>
+                                          <Tab text="Banda">
+                                             <content>
+                                                <GridPane fx:id="MusicosJ2" alignment="CENTER" prefHeight="228.0" prefWidth="1011.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="20.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="422.0" minWidth="-Infinity" percentWidth="22.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="22.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="220.31524658203125" minHeight="10.0" prefHeight="210.54351806640625" valignment="CENTER" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="41.671142578125" minHeight="0.0" prefHeight="22.45648193359375" valignment="CENTER" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Información">
+                                             <content>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="223.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.0" minWidth="10.0" prefWidth="127.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="577.0" minWidth="10.0" prefWidth="548.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fama.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" layoutX="24.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fondos.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="j2fama" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="j2fondos" layoutX="290.0" layoutY="35.0" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Actuación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="actuacionJ2" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/actuacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="95.0" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="253.0" prefWidth="274.0" spacing="10.0">
+                                                         <children>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" selected="true" text="Jugador 1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="toggleActJ2" />
+                                                               </toggleGroup>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 2" toggleGroup="$toggleActJ2">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 3" toggleGroup="$toggleActJ2">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 4" toggleGroup="$toggleActJ2">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 5" toggleGroup="$toggleActJ2">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets left="10.0" right="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="272.0">
+                                                         <children>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionSumar" prefHeight="60.0" prefWidth="125.0" text="+">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionRestar" prefHeight="60.0" prefWidth="125.0" text="-">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Grabación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="grabacionJ2" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/grabacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="toggleGrabJ2" />
+                                                                                 </toggleGroup>
+                                                                              </ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ2" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ2" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <Button mnemonicParsing="false" onAction="#grabacionLanzar" text="Volver a Lanzar" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Publicidad">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="publicidadJ2" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/publicidad0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="togglePubJ2" />
+                                                                                 </toggleGroup>
+                                                                              </ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ2" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ2" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ2" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <Button mnemonicParsing="false" text="Sumar" />
+                                                                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Restar" />
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="jugador3Tab" text="Jugador 3">
+                                 <content>
+                                    <TabPane prefHeight="267.0" prefWidth="1011.0" tabClosingPolicy="UNAVAILABLE">
+                                       <tabs>
+                                          <Tab text="Banda">
+                                             <content>
+                                                <GridPane fx:id="MusicosJ3" alignment="CENTER" prefHeight="228.0" prefWidth="1011.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="20.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="422.0" minWidth="-Infinity" percentWidth="22.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="22.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="220.31524658203125" minHeight="10.0" prefHeight="210.54351806640625" valignment="CENTER" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="41.671142578125" minHeight="0.0" prefHeight="22.45648193359375" valignment="CENTER" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Información">
+                                             <content>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="223.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.0" minWidth="10.0" prefWidth="127.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="577.0" minWidth="10.0" prefWidth="548.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fama.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" layoutX="24.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fondos.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="j3fama" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="j3fondos" layoutX="290.0" layoutY="35.0" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Actuación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="actuacionJ3" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/actuacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="95.0" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="253.0" prefWidth="274.0" spacing="10.0">
+                                                         <children>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" selected="true" text="Jugador 1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="toggleActJ3" />
+                                                               </toggleGroup>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 2" toggleGroup="$toggleActJ3">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 3" toggleGroup="$toggleActJ3">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 4" toggleGroup="$toggleActJ3">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 5" toggleGroup="$toggleActJ3">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets left="10.0" right="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="272.0">
+                                                         <children>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionSumar" prefHeight="60.0" prefWidth="125.0" text="+">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionRestar" prefHeight="60.0" prefWidth="125.0" text="-">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Grabación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="grabacionJ3" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/grabacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="toggleGrabJ3" />
+                                                                                 </toggleGroup>
+                                                                              </ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ3" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ3" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <Button mnemonicParsing="false" onAction="#grabacionLanzar" text="Volver a Lanzar" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Publicidad">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="publicidadJ3" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/publicidad0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="togglePubJ3" />
+                                                                                 </toggleGroup>
+                                                                              </ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ3" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ3" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ3" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ3" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <Button mnemonicParsing="false" text="Sumar" />
+                                                                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Restar" />
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="jugador4Tab" text="Jugador 4">
+                                 <content>
+                                    <TabPane prefHeight="267.0" prefWidth="1011.0" tabClosingPolicy="UNAVAILABLE">
+                                       <tabs>
+                                          <Tab text="Banda">
+                                             <content>
+                                                <GridPane fx:id="MusicosJ4" prefHeight="228.0" prefWidth="1011.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="31.0" minWidth="31.0" prefWidth="31.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="171.84524536132812" minWidth="10.0" prefWidth="171.84524536132812" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="31.0" minWidth="31.0" prefWidth="31.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="31.0" minWidth="31.0" prefWidth="31.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="31.0" minWidth="31.0" prefWidth="31.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="31.0" minWidth="31.0" prefWidth="31.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="220.31524658203125" minHeight="10.0" prefHeight="210.54351806640625" valignment="CENTER" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="41.671142578125" minHeight="0.0" prefHeight="22.45648193359375" valignment="CENTER" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </GridPane>
+                                             </content>
+                                             <content>
+                                                <GridPane fx:id="MusicosJ4" alignment="CENTER" prefHeight="228.0" prefWidth="1011.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="20.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="422.0" minWidth="-Infinity" percentWidth="22.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="22.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="220.31524658203125" minHeight="10.0" prefHeight="210.54351806640625" valignment="CENTER" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="41.671142578125" minHeight="0.0" prefHeight="22.45648193359375" valignment="CENTER" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Información">
+                                             <content>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="223.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.0" minWidth="10.0" prefWidth="127.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="577.0" minWidth="10.0" prefWidth="548.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fama.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" layoutX="24.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fondos.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="j4fama" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="j4fondos" layoutX="290.0" layoutY="35.0" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Actuación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="actuacionJ4" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/actuacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="95.0" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="253.0" prefWidth="274.0" spacing="10.0">
+                                                         <children>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" selected="true" text="Jugador 1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="toggleActJ4" />
+                                                               </toggleGroup>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 2" toggleGroup="$toggleActJ4">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 3" toggleGroup="$toggleActJ4">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 4" toggleGroup="$toggleActJ4">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 5" toggleGroup="$toggleActJ4">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets left="10.0" right="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="272.0">
+                                                         <children>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionSumar" prefHeight="60.0" prefWidth="125.0" text="+">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionRestar" prefHeight="60.0" prefWidth="125.0" text="-">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Grabación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="grabacionJ4" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/grabacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="toggleGrabJ4" />
+                                                                                 </toggleGroup>
+                                                                              </ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ4" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ4" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <Button mnemonicParsing="false" onAction="#grabacionLanzar" text="Volver a Lanzar" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Publicidad">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="publicidadJ4" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/publicidad0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="togglePubJ4" />
+                                                                                 </toggleGroup>
+                                                                              </ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ4" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ4" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ4" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <Button mnemonicParsing="false" text="Sumar" />
+                                                                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Restar" />
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="jugador5Tab" text="Jugador 5">
+                                 <content>
+                                    <TabPane prefHeight="267.0" prefWidth="1011.0" tabClosingPolicy="UNAVAILABLE">
+                                       <tabs>
+                                          <Tab text="Banda">
+                                             <content>
+                                                <GridPane fx:id="MusicosJ5" alignment="CENTER" prefHeight="228.0" prefWidth="1011.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="20.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="422.0" minWidth="-Infinity" percentWidth="22.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="23.0" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="22.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints maxHeight="220.31524658203125" minHeight="10.0" prefHeight="210.54351806640625" valignment="CENTER" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="41.671142578125" minHeight="0.0" prefHeight="22.45648193359375" valignment="CENTER" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Información">
+                                             <content>
+                                                <GridPane>
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="223.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="399.0" minWidth="10.0" prefWidth="127.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="577.0" minWidth="10.0" prefWidth="548.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fama.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <ImageView fitHeight="124.0" fitWidth="214.0" layoutX="24.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <image>
+                                                            <Image url="@imagenes/info-fondos.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="j5fama" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label fx:id="j5fondos" layoutX="290.0" layoutY="35.0" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="Impact" size="64.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Actuación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="actuacionJ5" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/actuacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="95.0" spacing="10.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/avatars/ico01.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER_LEFT" prefHeight="253.0" prefWidth="274.0" spacing="10.0">
+                                                         <children>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" selected="true" text="Jugador 1">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                               <toggleGroup>
+                                                                  <ToggleGroup fx:id="toggleActJ5" />
+                                                               </toggleGroup>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 2" toggleGroup="$toggleActJ5">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 3" toggleGroup="$toggleActJ5">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 4" toggleGroup="$toggleActJ5">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                            <RadioButton maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" text="Jugador 5" toggleGroup="$toggleActJ5">
+                                                               <font>
+                                                                  <Font name="Impact" size="16.0" />
+                                                               </font>
+                                                            </RadioButton>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets left="10.0" right="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="272.0">
+                                                         <children>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionSumar" prefHeight="60.0" prefWidth="125.0" text="+">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#actuacionRestar" prefHeight="60.0" prefWidth="125.0" text="-">
+                                                               <font>
+                                                                  <Font size="36.0" />
+                                                               </font>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Grabación">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="grabacionJ5" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/grabacion0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="toggleGrabJ5" />
+                                                                                 </toggleGroup>
+                                                                              </ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$toggleGrabJ5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <Button mnemonicParsing="false" onAction="#grabacionLanzar" text="Volver a Lanzar" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Publicidad">
+                                             <content>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="253.0" prefWidth="302.0">
+                                                         <children>
+                                                            <ImageView fx:id="publicidadJ5" fitHeight="253.0" fitWidth="302.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@imagenes/acciones/publicidad0.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="253.0" prefWidth="741.0">
+                                                         <children>
+                                                            <HBox prefHeight="219.0" prefWidth="689.0">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                               <children>
+                                                                  <VBox alignment="CENTER" prefHeight="193.0" prefWidth="705.0">
+                                                                     <children>
+                                                                        <GridPane alignment="CENTER" prefHeight="151.0" prefWidth="689.0">
+                                                                           <columnConstraints>
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                           </columnConstraints>
+                                                                           <rowConstraints>
+                                                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                           </rowConstraints>
+                                                                           <children>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                                                 <toggleGroup>
+                                                                                    <ToggleGroup fx:id="togglePubJ5" />
+                                                                                 </toggleGroup>
+                                                                              </ToggleButton>
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ5" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ5" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                              <ToggleButton layoutX="388.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="1" toggleGroup="$togglePubJ5" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                                                           <children>
+                                                                              <Button mnemonicParsing="false" text="Sumar" />
+                                                                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Restar" />
+                                                                           </children>
+                                                                        </HBox>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="10.0" top="10.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

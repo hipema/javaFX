@@ -33,7 +33,8 @@ public class MaxMinMedVarControlador implements Initializable {
   @FXML
   private TextArea resultados;  // área para mostrar los resultados calculados.
   
-  private int totalNotas = Integer.parseInt(numNotas.getText());
+  private int totalNotas = 10;
+//  private int totalNotas = Integer.parseInt(numNotas.getText());
   
   private void TipoDatoIncorrecto(String mensaje) {
       Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <GridPane alignment="CENTER" hgap="15.0" vgap="15.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ejercicios.gui.MaxMinMedVarControlador">
    <columnConstraints>
@@ -25,7 +28,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="numNotas" text="Introduce la nota nº 1:" GridPane.rowIndex="2">
+      <Label fx:id="numNotas" text="Introduce la nota nº 1 :" GridPane.rowIndex="2">
          <font>
             <Font size="18.0" />
          </font>

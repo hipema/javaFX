@@ -1,52 +1,84 @@
 package ejemplos;
 
-import java.io.File;
-
 /**
- /**
- * Ejemplo de login.
+ * Ejemplo de control del valor de un spinner editable de enteros.
  * 
- * Similar al ejemplo anterior pero sin FXML.
- * 
+ * Impedimos cambiar el valor del spinner desde el editor si ponemos uno que no sea numérico. 
  */
 
+import java.util.regex.Pattern;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class Ej12Ficheros extends Application {
 
-  public static void main(String[] args) {
-    launch(args);
-}
-
   @Override
   public void start(Stage primaryStage) {
-    primaryStage.setTitle("JavaFX App");
 
-    FileChooser fileChooser = new FileChooser();
+    // Layout
 
-    Button button = new Button("Select File");
-    button.setOnAction(e -> {
-        File selectedFile = fileChooser.showOpenDialog(primaryStage);
+    GridPane root = new GridPane();
+    root.setHgap(10);
+    root.setVgap(10);
+    root.setPadding(new Insets(10));
+
+    int row = 0;
+
+    root.add(new Label("Nivel: "), 0, row);
+    
+    // Spinner con valores numéricos
+
+    Spinner<Integer> spinner = new Spinner<Integer>(); 
+
+    SpinnerValueFactory<Integer> valueFactory = // Value factory
+        new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 50, 25);
+
+    spinner.setValueFactory(valueFactory);
+    spinner.setEditable(true);
+    
+    // Accedemos al editor del spinner y controlamos que no se metan valores no enteros 
+    
+    spinner.getEditor().textProperty().addListener((observable, oldValue, newValue) -> {
+      if (! esNumerico(newValue)) {
+        spinner.getEditor().setText(oldValue);
+        System.out.println("Valor incorrecto: " + newValue);
+      }
     });
 
-    VBox vBox = new VBox(button);
-    Scene scene = new Scene(vBox, 960, 600);
+    root.add(spinner, 1, row++, 2, 1);
 
+    // Botones
+
+    Button button1 = new Button("-5");
+    button1.setOnAction(value -> valueFactory.setValue(spinner.getValue() - 5));
+    root.add(button1, 1, row);
+    
+    Button button2 = new Button("+5");
+    button2.setOnAction(value -> valueFactory.setValue(spinner.getValue() + 5));
+    root.add(button2, 2, row);
+
+    // Scene y stage
+
+    Scene scene = new Scene(root);
+
+    primaryStage.setTitle("Spinner Experiments");
     primaryStage.setScene(scene);
     primaryStage.show();
-}
+  }
+  
+  private static boolean esNumerico(String cadena) {
+    return Pattern.matches("^[1-9][0-9]*$", cadena);
+  }
+
+  public static void main(String[] args) {
+    launch(args);
+  }
 }
